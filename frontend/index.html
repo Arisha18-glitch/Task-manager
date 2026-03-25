@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow Stationery Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Stationery Decorations -->
+    <div class="decoration pen-decoration">✏️</div>
+    <div class="decoration pencil-decoration">📝</div>
+
+    <div class="container">
+        <header>
+            <h1>📒 NeuroTick </h1>
+            <p class="subtitle">Organize your tasks with me ✏️📎📌</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Completed Tasks Column -->
+            <div class="task-column">
+                <h2>Completed Tasks</h2>
+                <div class="task-list" id="completed-tasks"></div>
+            </div>
+
+            <!-- Main Task Form Column -->
+            <div class="task-column">
+                <h2>📝 Add New Task</h2>
+                <form class="task-form" id="task-form">
+                    <div class="form-group">
+                        <label for="task-title"> Title</label>
+                        <input type="text" id="task-title" placeholder="What needs to be done?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-description"> Description</label>
+                        <textarea id="task-description" rows="3" placeholder="Add details..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="normal">🟢Normal</option>
+                            <option value="medium">🟡Medium</option>
+                            <option value="high">🔴High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-category"> Category</label>
+                        <select id="task-category">
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="study">Study</option>
+                            <option value="health">Health</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-due"> Due Date</label>
+                        <input type="datetime-local" id="task-due">
+                    </div>
+                    <button type="submit" id="submit-btn"> Add Task</button>
+                </form>
+            </div>
+
+            <!-- Pending Tasks Column -->
+            <div class="task-column">
+                <h2> Pending Tasks</h2>
+                <div class="task-list" id="pending-tasks"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Icon -->
+    <div class="chatbot-toggle" id="chatbot-toggle">💬</div>
+
+    <!-- Chatbot Container (hidden by default) -->
+    <div class="chatbot-container" id="chatbot-container" style="display:none;">
+        <div class="chatbot-header">
+            <span>📎 Task Buddy</span>
+            <button id="close-chatbot">✕</button>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">Hello! I'm your Task Assistant. How can I help you today?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="chatbot-input" placeholder="Ask me something...">
+            <button id="send-message">Send</button>
+        </div>
+    </div>
+
+    <!-- Audio for Reminder Sound -->
+    <audio id="reminderSound" preload="auto">
+        <source
+            src="data:audio/mp3;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV"
+            type="audio/mpeg">
+    </audio>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
