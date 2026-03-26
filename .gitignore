@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+cognita_env/
+ENV/
+.env
+
+# C++ / Executables
+*.exe
+*.out
+*.o
+*.obj
+task_backend.exe
+
+# Flutter / Web (if you add later)
+.dart_tool/
+build/
+*.log
+
+# General
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# JSON data (optional - you can keep tasks.json if you want it in repo)
+# tasks.json
+
+# VS Code / Editors
+.vscode/
+.idea/
